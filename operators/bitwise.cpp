@@ -2,6 +2,12 @@
 #include <bitset> // package for binary
 using namespace std;
 
+// dont shift negative numbers
+// shifting is multiplication or division by 2
+// if no carry, then a + b = a | b
+// if carry, then a + b = (a | b) + (a & b)
+// xor finds the odd one out
+
 int main() {
 
 	// a = 5(00000101), b = 9(00001001)
