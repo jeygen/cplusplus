@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bitset> // package for binary
 using namespace std;
 
 int main() {
@@ -9,6 +10,10 @@ int main() {
 	// The result is 00000001
 	cout << "a = " << a <<","<< " b = " << b <<endl;
 	cout << "a & b = " << (a & b) << endl; // bitwise AND
+	cout << bitset<8>(a & b) << endl; // to display binary
+	
+	// kinda unrelated
+	cout << hex << 15 << endl; // to display hex or octal (use oct)
 
 	// The result is 00001101
 	cout << "a | b = " << (a | b) << endl; // bitwise OR
@@ -27,4 +32,3 @@ int main() {
 
 	return 0;
 }
-
