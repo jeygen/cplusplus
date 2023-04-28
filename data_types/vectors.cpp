@@ -38,7 +38,7 @@ int main() {
   cout << "vector1 = ";
 
   // ranged loop
-  for (const int& i : vector1) { //int& i is creating a reference var, ref cant change where they point, its like/is an alias
+  for (const int& i : vector1) { //int& i is creating a reference var, ref cant change where they point, its like/is an alias, diff than "address of" usage
     cout << i << "  ";
   }
 
