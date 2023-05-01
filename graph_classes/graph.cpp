@@ -1,116 +1,84 @@
+#include "graph_classes.hpp"
 #include <vector>
-#include <utility> // for std::pair
+#include <utility>
 
-class DirectedGraph {
-public:
-	DirectedGraph(int n) : adj_list{n} {} // constructor, w/ member intit 
+// DirectedGraph
+DirectedGraph::DirectedGraph(int n) : adj_list(n) {}
 
-	void add_edge(int u, int v) {
-		// push_back() vector method to add and expand to end of vect
-		adj_list[u].push_back(v); 
-	}
+void DirectedGraph::add_edge(int u, int v) {
+    adj_list[u].push_back(v);
+}
 
-	// the 1st const, usually paired with &, since & means passing by
-	// ref and not value means working on og so don't want to change it.
-	// the 2nd const communicates the method is not altering contents.
-	// 	allows method to called on const object and helps compiler.
-	//  can think read only or getter
-	// & because returning c++ reference/alias
-	const std::vector<int>& neighbours(int u) const {
-		return adj_list[u];
-	}
+const std::vector<int>& DirectedGraph::neighbours(int u) const {
+    return adj_list[u];
+}
 
-	int num_vertices() const {
-		return adj_list.size();
-	}
+int DirectedGraph::num_vertices() const {
+    return adj_list.size();
+}
 
-private:
-	// vector of vectors with {} acting as 0 intializer i think
-	// not strictly needed
-	std::vector<std::vector<int>> adj_list {};
-};
-		
+// UndirectedGraph
+UndirectedGraph::UndirectedGraph(int n) : adj_list(n) {}
 
-class UndirectedGraph {
-public:
-	UndirectedGraph(int n) : adj_list{n} {} 
+void UndirectedGraph::add_edge(int u, int v) {
+    adj_list[u].push_back(v);
+    adj_list[v].push_back(u);
+}
 
-	void add_edge(int u, int v) {
-		adj_list[u].push_back(v); 
-		adj_list[v].push_back(u); 
-	}
+const std::vector<int>& UndirectedGraph::neighbours(int u) const {
+    return adj_list[u];
+}
 
-	const std::vector<int>& neighbours(int u) const {
-		return adj_list[u];
-	}
+int UndirectedGraph::num_vertices() const {
+    return adj_list.size();
+}
 
-	int num_vertices() const {
-		return adj_list.size();
-	}
+// WeightedDirectedGraph
+WeightedDirectedGraph::WeightedDirectedGraph(int n) : adj_list(n) {}
 
-private:
-	std::vector<std::vector<int>> adj_list {};
-};
+void WeightedDirectedGraph::add_edge(int u, int v, int weight) {
+    adj_list[u].push_back({v, weight});
+}
 
+const std::vector<std::pair<int, int>>& WeightedDirectedGraph::neighbours(int u) const {
+    return adj_list[u];
+}
 
-class WeightedDirectedGraph {
-public:
-    WeightedDirectedGraph(int n) : adj_list{n} {}
+int WeightedDirectedGraph::num_vertices() const {
+    return adj_list.size();
+}
 
-    void add_edge(int u, int v, int weight) {
-        adj_list[u].push_back({v, weight});
-    }
-
-    const std::vector<std::pair<int, int>>& neighbours(int u) const {
-        return adj_list[u];
-    }
-
-    int num_vertices() const {
-        return adj_list.size();
-    }
-
-	int get_weight(int u, int v) const {
-		// should prob use const and & for p, but not fully necessary
-        for (auto p : adj_list[u]) {
-			// first and second are refering to utility pair (first, sec)
-            if (p.first == v) {
-                return p.second;
-            }
+int WeightedDirectedGraph::get_weight(int u, int v) const {
+    for (auto p : adj_list[u]) {
+        if (p.first == v) {
+            return p.second;
         }
-        return -1; // return -1 if edge not found
     }
+    return -1;
+}
 
-private:
-    std::vector<std::vector<std::pair<int, int>>> adj_list;
-};
+// WeightedUndirectedGraph
+WeightedUndirectedGraph::WeightedUndirectedGraph(int n) : adj_list(n) {}
 
+void WeightedUndirectedGraph::add_edge(int u, int v, int weight) {
+    adj_list[u].push_back({v, weight});
+    adj_list[v].push_back({u, weight});
+}
 
-class WeightedUndirectedGraph {
-public:
-    WeightedUndirectedGraph(int n) : adj_list{n} {}
+const std::vector<std::pair<int, int>>& WeightedUndirectedGraph::neighbours(int u) const {
+    return adj_list[u];
+}
 
-    void add_edge(int u, int v, int weight) {
-        adj_list[u].push_back({v, weight});
-        adj_list[v].push_back({u, weight});
-    }
+int WeightedUndirectedGraph::num_vertices() const {
+    return adj_list.size();
+}
 
-    const std::vector<std::pair<int, int>>& neighbours(int u) const {
-        return adj_list[u];
-    }
-
-    int num_vertices() const {
-        return adj_list.size();
-    }
-
-	int get_weight(int u, int v) const {
-        for (auto p : adj_list[u]) {
-            if (p.first == v) {
-                return p.second;
-            }
+int WeightedUndirectedGraph::get_weight(int u, int v) const {
+    for (auto p : adj_list[u]) {
+        if (p.first == v) {
+            return p.second;
         }
-        return -1; 
     }
+    return -1;
+}
 
-private:
-    std::vector<std::vector<std::pair<int, int>>> adj_list;
-};
