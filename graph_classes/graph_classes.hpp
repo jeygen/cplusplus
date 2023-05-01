@@ -13,7 +13,7 @@ public:
 
     void add_edge(int u, int v);
 
-    const std::vector<int>& neighbors(int u) const;
+    const std::vector<int>& neighbours(int u) const;
 
     int num_vertices() const;
 
@@ -27,7 +27,7 @@ public:
 
     void add_edge(int u, int v);
 
-    const std::vector<int>& neighbors(int u) const;
+    const std::vector<int>& neighbours(int u) const;
 
     int num_vertices() const;
 
@@ -41,7 +41,7 @@ public:
 
     void add_edge(int u, int v, int weight);
 
-    const std::vector<std::pair<int, int>>& neighbors(int u) const;
+    const std::vector<std::pair<int, int>>& neighbours(int u) const;
 
     int num_vertices() const;
 
@@ -57,7 +57,7 @@ public:
 
     void add_edge(int u, int v, int weight);
 
-    const std::vector<std::pair<int, int>>& neighbors(int u) const;
+    const std::vector<std::pair<int, int>>& neighbours(int u) const;
 
     int num_vertices() const;
 
