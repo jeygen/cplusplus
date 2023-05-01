@@ -26,6 +26,7 @@ public:
 
 private:
 	// vector of vectors with {} acting as 0 intializer i think
+	// not strictly needed
 	std::vector<std::vector<int>> adj_list {};
 };
 		
@@ -60,7 +61,7 @@ public:
         adj_list[u].push_back({v, weight});
     }
 
-    const std::vector<std::pair<int, int>>& neighbors(int u) const {
+    const std::vector<std::pair<int, int>>& neighbours(int u) const {
         return adj_list[u];
     }
 
@@ -93,7 +94,7 @@ public:
         adj_list[v].push_back({u, weight});
     }
 
-    const std::vector<std::pair<int, int>>& neighbors(int u) const {
+    const std::vector<std::pair<int, int>>& neighbours(int u) const {
         return adj_list[u];
     }
 
