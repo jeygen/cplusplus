@@ -1,6 +1,7 @@
 #include "graph_classes.hpp"
 #include <vector>
 #include <utility>
+#include <iostream>
 
 // DirectedGraph
 DirectedGraph::DirectedGraph(int n) : adj_list(n) {}
