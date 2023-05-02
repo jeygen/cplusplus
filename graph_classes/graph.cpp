@@ -17,6 +17,20 @@ int DirectedGraph::num_vertices() const {
     return adj_list.size();
 }
 
+void DirectedGraph::print_nodes() const {
+    for (int i = 0; i < num_vertices(); ++i) {
+        std::cout << "Node " << i << ": ";
+        const std::vector<int>& neighbours = this->neighbours(i);
+        for (int j = 0; j < neighbours.size(); ++j) {
+            std::cout << neighbours[j];
+            if (j < neighbours.size() - 1) {
+                std::cout << ", ";
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
 // UndirectedGraph
 UndirectedGraph::UndirectedGraph(int n) : adj_list(n) {}
 
@@ -33,6 +47,19 @@ int UndirectedGraph::num_vertices() const {
     return adj_list.size();
 }
 
+void UndirectedGraph::print_nodes() const {
+    for (int i = 0; i < num_vertices(); ++i) {
+        std::cout << "Node " << i << ": ";
+        const std::vector<int>& neighbours = this->neighbours(i);
+        for (int j = 0; j < neighbours.size(); ++j) {
+            std::cout << neighbours[j];
+            if (j < neighbours.size() - 1) {
+                std::cout << ", ";
+            }
+        }
+        std::cout << std::endl;
+    }
+}
 // WeightedDirectedGraph
 WeightedDirectedGraph::WeightedDirectedGraph(int n) : adj_list(n) {}
 

@@ -10,6 +10,8 @@ int main() {
     dg.add_edge(1, 3);
     dg.add_edge(2, 3);
 
+	dg.print_nodes();
+/*
     for (int i = 0; i < dg.num_vertices(); ++i) {
         std::cout << "Node " << i << ": ";
         const std::vector<int>& neighbours = dg.neighbours(i);
@@ -21,6 +23,8 @@ int main() {
         }
         std::cout << std::endl;
     }
+*/
+	
 
     return 0;
 }

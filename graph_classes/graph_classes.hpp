@@ -17,6 +17,8 @@ public:
 
     int num_vertices() const;
 
+	void print_nodes() const;
+
 private:
     std::vector<std::vector<int>> adj_list;
 };
@@ -31,6 +33,7 @@ public:
 
     int num_vertices() const;
 
+	void print_nodes() const;
 private:
     std::vector<std::vector<int>> adj_list;
 };
