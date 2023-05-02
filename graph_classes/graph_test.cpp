@@ -11,6 +11,17 @@ int main() {
     dg.add_edge(2, 3);
 
 	dg.print_nodes();
+
+	
+    UndirectedGraph ug(4);
+
+    ug.add_edge(0, 1);
+    ug.add_edge(0, 2);
+    ug.add_edge(1, 2);
+    ug.add_edge(2, 3);
+    ug.add_edge(3, 3);
+
+	ug.print_nodes();
 /*
     for (int i = 0; i < dg.num_vertices(); ++i) {
         std::cout << "Node " << i << ": ";
