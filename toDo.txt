@@ -1,0 +1,7 @@
+- why call example::example() {m_count = 0;} example::~example() {} ?
+- do a full on parsing from txt file example
+	- include a system(), is_open() check, seekg(), tellg()
+- review iostream, fstream, cstdlib
+- practice vector pointers like vector<string>* 
+- Instance() methods?
+- refresh on (*p) and (*p).method() calls
