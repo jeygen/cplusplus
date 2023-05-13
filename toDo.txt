@@ -5,3 +5,8 @@
 - practice vector pointers like vector<string>* 
 - Instance() methods?
 - refresh on (*p) and (*p).method() calls
+
+- make a simple parser with seekg() and tellg()
+- - mem
+- practice singleton
+- - mem
