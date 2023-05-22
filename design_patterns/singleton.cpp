@@ -26,3 +26,30 @@ int main() {
     mySingleton.DoSomething(); 
     return 0;
 }
+
+// this way, also works but less safe
+
+class Singleton {
+private:
+    static Singleton* instance;
+    
+    // Private constructor to prevent direct instantiation
+    Singleton() {
+        // Constructor code...
+    }
+    
+public:
+    // Static method to access the singleton instance
+    static Singleton* getInstance() {
+        if (instance == nullptr) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+    
+    // Other member functions...
+};
+
+// Initialize the static member variable
+Singleton* Singleton::instance = nullptr;
+
