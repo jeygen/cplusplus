@@ -29,6 +29,19 @@ int binarySearch(int arr[], int l, int r, int x) {
     return -1;
 }
 
+int my_bin_search(int a[], int l, int r, int target) {
+	if (l <= r) {
+		int mid = l + (r - l) / 2;
+		if (target == a[mid]) 
+			return mid;
+		if (target > a[mid]) 
+			return my_bin_search(a, mid + 1, r, target);	
+		if (target < a[mid]) 
+			return my_bin_search(a, l, mid - 1, target);	
+	}
+	return -1;
+}
+
 int main() {
     int arr[] = {2, 3, 4, 10, 40};
     int x = 10;
