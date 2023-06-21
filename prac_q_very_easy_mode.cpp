@@ -46,15 +46,24 @@ void swap(int* a, int* b) {
 
 // Fibonacci
 int fibonacci(int n) {
-    if (n <= 1) return n;
+    if (n < 0) {
+        std::cerr << "Error: Fibonacci is not defined for negative numbers." << std::endl;
+        return -1;
+    }
+    else if (n <= 1) return n;
     else return fibonacci(n-1) + fibonacci(n-2);
 }
 
 // Factorial
 int factorial(int n) {
-    if (n == 0) return 1;
+    if (n < 0) {
+        std::cerr << "Error: Factorial is not defined for negative numbers." << std::endl;
+        return -1;
+    }
+    else if (n == 0) return 1;
     else return n * factorial(n - 1);
 }
+
 
 // Binary Search
 int binary_search(int arr[], int l, int r, int x) {
@@ -103,14 +112,16 @@ void bubble_sort(int arr[], int n) {
     }
 }
 
-// Count Characters in a String
-std::map<char, int> count_chars(std::string str) {
-    std::map<char, int> count;
+#include <unordered_map>
+
+std::unordered_map<char, int> count_chars(const std::string& str) {
+    std::unordered_map<char, int> count;
     for (char c : str) {
         count[c]++;
     }
     return count;
 }
+
 
 int main() {
     // Test swap functions
