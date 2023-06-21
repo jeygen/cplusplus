@@ -1,6 +1,10 @@
 // swap at least 3 ways
 
-// fibo, factorial 
+// fibo 
+
+// factorial
+
+// binary sort
 
 // reverse string
 
@@ -9,3 +13,4 @@
 // bubble sorto
 
 // count chars in string
+
