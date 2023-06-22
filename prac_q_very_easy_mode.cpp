@@ -4,7 +4,7 @@
 
 // factorial
 
-// binary sort
+// binary search
 
 // reverse string
 
