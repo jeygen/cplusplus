@@ -66,15 +66,27 @@ int factorial(int n) {
 
 
 // Binary Search
-int binary_search(int arr[], int l, int r, int x) {
-    while (l <= r) {
-        int m = l + (r - l) / 2;
-        if (arr[m] == x) return m;
-        if (arr[m] < x) l = m + 1;
-        else r = m - 1;
+// return the index of target
+int binary_search(int a[], int l, int r, int target) {
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+
+        // If the element is present at the middle itself
+        if (a[mid] == target)
+            return mid;
+
+        // If the element is smaller than mid, then it can only be present in the left subarray
+        if (a[mid] > target)
+            return binary_search(a, l, mid - 1, target);
+
+        // Else, the element can only be present in the right subarray
+        return binary_search(a, mid + 1, r, target);
     }
+
+    // We reach here when the element is not present in the array
     return -1;
 }
+
 
 // Reverse String
 std::string reverse_str(std::string str) {
