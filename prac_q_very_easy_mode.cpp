@@ -103,6 +103,15 @@ std::string reverseString(const std::string& str) {
     return reversedStr;
 }
 
+std::string rev_string(std::string& s) {
+	int mid = s.length() / 2;
+	for (int i=0; i < mid; i++) {
+		std::swap(s[i], s[s.length()-1-i]);
+	}
+	return s
+}	
+
+
 // FizzBuzz
 void fizzbuzz(int n) {
     for (int i = 1; i <= n; i++) {
