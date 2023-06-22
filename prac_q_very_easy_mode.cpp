@@ -1,18 +1,31 @@
 // swap at least 3 ways
-
 // fibo 
-
 // factorial
-
 // binary search
-
 // reverse string
-
 // fizzbuzz
-
 // bubble sorto
-
 // count chars in string
+// Palindrome Checker
+// Prime Number Checker
+// Count number of digits in integer
+// Reverse an integer
+// Array Sum
+// Find Minimum/Maximum
+// String Length without using `length()` or `size()`
+// Odd or Even
+
+
+// Convert Case
+// Duplicate Element Checker
+// Vowel Counter
+// Multiplication Table
+// Find the missing number
+// Find the duplicate number
+// Remove duplicates from a list
+
+// Levenshtein distance
+
 
 #include <iostream>
 #include <algorithm>
@@ -163,3 +176,31 @@ int main() {
     
     return 0;
 }
+
+// palindrome
+// template< class ExecutionPolicy, class ForwardIt1, class ForwardIt2 >
+bool is_palindrome(const std::string& s) {
+    return std::equal(s.begin(), s.begin() + s.size()/2, s.rbegin());
+}
+
+// prime
+bool is_prime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0) return false;
+    return true;
+}
+
+int array_sum(int arr[], int n) {
+    int sum = 0;
+    for(int i=0; i<n; i++) sum += arr[i];
+    return sum;
+}
+
+int string_length(const char* str) {
+    const char *s = str;
+    while(*s) ++s;
+    return s - str;
+}
+
+
