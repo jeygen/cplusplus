@@ -1,3 +1,5 @@
+# Makes all by default, if specifiy then makes target
+
 # Set the C++ compiler to g++
 CC=g++
 

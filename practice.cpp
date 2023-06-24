@@ -1,7 +1,7 @@
-
-#include <vector>
 #include <iostream>
+#include <cstdlib>
+#include <stack>
 
-int main() {
-
+	
+int main(int argc, char** argv) {
 }

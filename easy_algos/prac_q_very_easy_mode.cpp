@@ -15,7 +15,6 @@
 // String Length without using `length()` or `size()`
 // Odd or Even
 
-
 // Convert Case
 // Duplicate Element Checker
 // Vowel Counter
@@ -23,6 +22,10 @@
 // Find the missing number
 // Find the duplicate number
 // Remove duplicates from a list
+
+// dot product
+// matrix mult
+// matrix add
 
 // Levenshtein distance
 

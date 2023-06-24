@@ -20,7 +20,7 @@ all: $(BINARIES)
 # The automatic variables $@ and $< represent the target name and the
 # first prerequisite respectively.
 %: %.cpp
-    $(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<
 
         
 
