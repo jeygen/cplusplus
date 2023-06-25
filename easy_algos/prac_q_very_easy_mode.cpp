@@ -24,6 +24,7 @@
 // Remove duplicates from a list
 
 // dot product
+// cross product
 // matrix mult
 // matrix add
 
@@ -206,4 +207,44 @@ int string_length(const char* str) {
     return s - str;
 }
 
+
+// Vector is represented using std::array of 3 elements
+using Vector = std::array<double, 3>;
+
+// Matrix is represented using std::array of std::array (essentially, 2D array) of 3x3 elements
+using Matrix = std::array<std::array<double, 3>, 3>;
+
+// Dot product
+double dotProduct(const Vector& a, const Vector& b) {
+    return a[0]*b[0] + a[1]*b[1] + a[2]*b[2];
+}
+
+// Cross product
+Vector crossProduct(const Vector& a, const Vector& b) {
+    return {a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]};
+}
+
+// Matrix multiplication
+Matrix matrixMultiply(const Matrix& a, const Matrix& b) {
+    Matrix result = {};
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                result[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+    return result;
+}
+
+// Matrix addition
+Matrix matrixAdd(const Matrix& a, const Matrix& b) {
+    Matrix result = {};
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            result[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    return result;
+}
 
