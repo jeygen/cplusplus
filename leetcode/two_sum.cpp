@@ -55,6 +55,7 @@ public:
             }
 			// it is super important that this is here, as if earlier num[i]
 			// will be in every map, ie line 53 will always be true
+			// it'll return the same element twice i think
             map[nums[i]] = i;
         }
         return {};  // Return an empty vector if no solution is found
