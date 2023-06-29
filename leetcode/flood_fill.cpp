@@ -4,8 +4,8 @@
 
 // Create a queue for pixels to be processed and add the start pixel
 
-// Directions represent the four possible movements (up, down, left, right)
-
+// Create vector for directions represent the four possible movements (up, down, left, right)
+// main bfs part
 // Process pixels until the queue is empty
 
 // Get and remove the front element from the queue
@@ -54,7 +54,7 @@ std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, in
 				// apply x and y element to row and col
                 int nr = r + dir[0];
                 int nc = c + dir[1];
-				// if inbounds and old then push it to queue
+				// if pos, inbounds and old colour then push it to queue
                 if (nr >= 0 && nr < image.size() && nc >= 0 && nc < image[0].size() && image[nr][nc] == oldColor) {
                     q.push({nr, nc});
                 }
