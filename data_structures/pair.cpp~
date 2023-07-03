@@ -1,0 +1,29 @@
+// Pair is in the <utility> header
+
+// pair <data_type1, data_type2> Pair_name;
+
+#include<iostream>
+#include<utility>
+
+int main()
+{
+	std::pair <int, char> PAIR1; 
+	PAIR1.first = 100; 
+	PAIR1.second = 'G'; 
+
+	std::cout << PAIR1.first << " ";
+	std::cout << PAIR1.second << std::endl;
+
+	return 0;
+}
+
+// another example
+/* 
+  std::queue<std::pair<int, int>> q;
+  q.push({sr, sc});
+  // this initializes x and y into their own vars
+  // structured binding, it is shorthand for int x = q.front().first, y =
+  // q.front().second
+  auto [x, y] = q.front();
+*/
+  

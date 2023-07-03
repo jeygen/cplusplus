@@ -1,21 +1,27 @@
 #include <vector>
 #include <string>
 
-int find_long_ss_before_repeated_char(string s) {
+int some_ss_q(string s) {
 	// basic ss set-up
+
+	// ascii tracker, dont think always need it
 	std::vector<int> ascii_tracker(128, 0);
+
+	// counter for given char, ss length, window pointers
 	int counter=0, begin_window_index=0, end_window_index=0, sub_len=0;
 	
-	// some q, initialize ascii_tracker here
-	// could be for(auto c : s) {ascii_tracker[c]++;}
+	// sometimes initialize ascii_tracker here
+	for(auto c : s) {ascii_tracker[c]++;}
 
+	// run until end pointer so larger than string
 	while(end_window_index < s.size()) {
-		// check num of occurences for end of window
+
 		// counter alerts that the char has repeated
 		if (ascii_tracker[s[end_index]] > 0) counter++;
 
 		// count occurence of char	
 		ascii_tacker[s[end_window_index]]++;
+		
 		// increment end index
 		end_window_index++;
 			

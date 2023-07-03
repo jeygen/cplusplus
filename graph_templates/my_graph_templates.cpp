@@ -30,6 +30,45 @@ void bfs(int s) {
     }
 }
 
+// bfs alt 
+
+#include <iostream>
+#include <queue>
+#include <vector>
+
+void bfs(std::vector<std::vector<int>>& matrix, int start) {
+    int n = matrix.size();
+	// initialize vector to track visit status, all to false initially
+    std::vector<bool> visited(n, false);
+	// bfs leverages queues
+    std::queue<int> q;
+
+	// after visited add to queue general app
+	// add start to get it going
+    visited[start] = true;
+    q.push(start);
+
+	// while loop to add the remaining
+	// run until queue is empty
+    while (!q.empty()) {
+		// save the current node then pop it
+        int current = q.front();
+        q.pop();
+
+        std::cout << current << " ";
+
+		// itereate through size of matrix
+        for (int i = 0; i < n; ++i) {
+			// 1 means the nodes are connected
+			// if connected and not visisted add to queue
+            if (matrix[current][i] == 1 && !visited[i]) {
+                q.push(i);
+                visited[i] = true;
+            }
+        }
+    }
+}
+
 // bellman ford
 
 #include<bits/stdc++.h>
