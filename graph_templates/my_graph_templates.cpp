@@ -10,6 +10,27 @@ void dfs(int v) {
     }
 }
 
+// stack dfs
+
+vector<vector<int>> adj;  // adjacency list representation
+vector<bool> visited;
+void dfs(int n) {
+	visited[n] = true;
+	std::stack s;
+	s.push(n);
+
+	while(!s.empty()) {
+		int current = s.top();
+		s.pop();
+
+		for(auto& e : adj[current]) {
+			if (visited[e] == false) {
+				visited[e] = true;
+				s.push(e);
+			} 
+		}
+}
+				
 // bfs
 
 vector<vector<int>> adj;  // adjacency list representation
