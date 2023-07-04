@@ -1,2 +1,2 @@
 # cplusplus
- A private place to practice C++
+ A place to practice C++
