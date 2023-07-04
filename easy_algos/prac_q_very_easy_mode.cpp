@@ -8,8 +8,7 @@
 // count chars in string
 // Palindrome Checker
 // Prime Number Checker
-// Count number of digits in integer
-// Reverse an integer
+// Count number of digits in integer and reverse
 // Array Sum
 // Find Minimum/Maximum
 // String Length without using `length()` or `size()`
@@ -160,6 +159,15 @@ std::unordered_map<char, int> count_chars(const std::string& str) {
     return count;
 }
 
+size_t count_chars(const std::string& str) {
+    size_t count = 0;
+    const char* ptr = str.c_str();  // Get a pointer to the start of the string
+    while(*ptr) {  // Loop until we hit the null-terminating character
+        count++;
+        ptr++;  // Move the pointer to the next character
+    }
+    return count;
+}
 
 int main() {
     // Test swap functions

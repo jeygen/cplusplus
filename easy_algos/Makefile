@@ -4,7 +4,7 @@ CC=g++
 # Set compilation flags for g++. In this case:
 # -Wall enables all compiler's warning messages
 # -std=c++11 sets the C++ version to C++11
-CFLAGS=-Wall -std=c++11
+CFLAGS=-Wall -std=c++11 
 
 # Find all .cpp files in the current directory
 SOURCES=$(wildcard *.cpp)
@@ -23,5 +23,6 @@ all: $(BINARIES)
 	$(CC) $(CFLAGS) -o $@ $<
 
         
-
+practice: practice.cpp
+	$(CC) -w $(CFLAGS) -o $@ $<
 
