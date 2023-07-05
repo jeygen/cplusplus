@@ -21,6 +21,8 @@ bool is_palindrome(std::string s) {
 	return true;
 }
 	
+
+// better way
 #include <string>
 #include <algorithm>
 #include <cctype>

@@ -21,6 +21,17 @@ bool is_palindrome(std::string s) {
 	return true;
 }
 	
+bool isPalindrome(std::string s) {
+  // turn all into lowercase
+  // ignore or remove non-alpha numeric
+  std::regex regex("[^a-zA-Z0-9]+"); // <regex>
+  s = std::regex_replace(s, regex, "");
+
+  for (char& c: s) {
+    c = std::tolower(c); // <cctype>
+
+  return std::equal(s.begin(),s.begin() + s.length() / 2, s.rbegin());
+}
 
 // better way
 #include <string>
