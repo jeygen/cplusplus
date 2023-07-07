@@ -1,6 +1,7 @@
 #include <iostream>
 
 // Define the structure for tree nodes
+// could be struct or class, struct always public, historically no methods, no perfomance diff
 struct TreeNode {
     int value;
     TreeNode* left;
