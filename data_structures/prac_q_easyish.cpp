@@ -4,3 +4,4 @@
 // linked list
 // hashtable
 // heap
+// bin tree
