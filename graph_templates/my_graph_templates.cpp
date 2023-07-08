@@ -51,7 +51,7 @@ void bfs(int s) {
     }
 }
 
-// bfs alt 
+// bfs matrix alt 
 
 #include <iostream>
 #include <queue>
@@ -89,6 +89,43 @@ void bfs(std::vector<std::vector<int>>& matrix, int start) {
         }
     }
 }
+
+// bfs basic tree
+
+#include <iostream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+void bfs(vector<int>& tree) {
+    if (tree.empty()) return;  // if tree is empty, just return
+
+    queue<int> q;
+    q.push(0);  // start with root at index 0
+
+    while (!q.empty()) {
+        int current = q.front();
+        q.pop();
+
+        // Print or otherwise use the value at tree[current] here
+        cout << tree[current] << " ";
+
+        int left = 2 * current + 1;
+        int right = 2 * current + 2;
+
+        // Add the left child to the queue if it exists
+        if (left < tree.size()) {
+            q.push(left);
+        }
+
+        // Add the right child to the queue if it exists
+        if (right < tree.size()) {
+            q.push(right);
+        }
+    }
+}
+
 
 // bellman ford
 

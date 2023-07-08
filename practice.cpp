@@ -7,16 +7,34 @@
 #include <regex>
 #include <set>
 
-bool containsDuplicate(vector<int>& nums) {
-  std::unordered_set<int> us{};
-  for (int e : us) {
-    if (us.find(e) != us.end) {
-      return true;
+void bfs(vector& v) {
+  vector<bool> visited;
+  visited[v[0]] = true;
+
+  queue q;
+  q.push(v[0]);
+
+  while (!q.empty()) {
+    int current = q.front();
+    q.pop();
+
+    for(int i = 0; i < v.size(); i++)  {
+      if (v[i] == false) {
+        v[i] == true;
+        q.push(v[i]);
+      }
     }
-    us.push_back(e);
-  } 
-  return false;
+  }
 }
-   
+
+  
+
+
+
 int main(int argc, char** argv) {
+	int doggy = 1;
+	int cat = doggy	
+  int doggy
+  int dogg
+
 }
