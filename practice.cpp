@@ -7,26 +7,13 @@
 #include <regex>
 #include <set>
 
-void bfs(vector& v) {
-  vector<bool> visited;
-  visited[v[0]] = true;
-
-  queue q;
-  q.push(v[0]);
-
-  while (!q.empty()) {
-    int current = q.front();
-    q.pop();
-
-    for(int i = 0; i < v.size(); i++)  {
-      if (v[i] == false) {
-        v[i] == true;
-        q.push(v[i]);
-      }
-    }
+TreeNode* invertTree(TreeNode* root) {
+  TreeNode* current = root;
+  if (current->left && current ->right) {
+      swap(current->left, current->right);
   }
+  return current->left;
 }
-
   
 
 
