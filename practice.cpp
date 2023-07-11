@@ -8,20 +8,18 @@
 #include <set>
 
 TreeNode* invertTree(TreeNode* root) {
-  TreeNode* current = root;
-  if (current->left && current ->right) {
-      swap(current->left, current->right);
-  }
-  return current->left;
+  if (root == nullptr) return nullptr;
+
+    swap(root->left, root->right);
+    invertTree(root->left);
+    invertTree(root->right);
+
+  return root;
 }
+  
+  
+  
   
 
 
 
-int main(int argc, char** argv) {
-	int doggy = 1;
-	int cat = doggy	
-  int doggy
-  int dogg
-
-}
