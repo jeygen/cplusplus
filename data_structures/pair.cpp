@@ -57,3 +57,15 @@ int main() {
     std::pair<int, char> p6 = std::make_pair(3, 'c'); // Makes a pair without having to write the types explicitly
 }
   
+// another example
+
+std::pair<int, int> divide(int numerator, int denominator) {
+    if(denominator == 0) {
+        throw std::invalid_argument("Denominator cannot be zero");
+    }
+
+    int quotient = numerator / denominator;
+    int remainder = numerator % denominator;
+    
+    return std::make_pair(quotient, remainder);
+}
