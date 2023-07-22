@@ -7,19 +7,14 @@
 #include <regex>
 #include <set>
 
-bool P(string s) {
-  std::vector<int> cleaned_s;
-  for(char c : s) {
-    if (c > 47 && c < 123) {
-      cleaned_s.push_back(c);
-    }
-  }
-
-  for (int i = 0; i < cleaned_s.size()/2; i++) {
-    if (cleaned_s[i] != cleaned_s[cleaned_s.size() - 1 -i]) {
-      return false;
-    }
+bool contains_d(std::vector<int>& nums) {
+  // could use set but ordererd or unordered?
+  // // order doesn't matter in this context
+  std::unordered_set us{};
+  for (auto& n : nums) {
+    if (us.find(n)) {return false;}
+    us.push_back(n);
   }
 
   return true;
-}
+
