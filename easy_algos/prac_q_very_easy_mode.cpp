@@ -127,6 +127,22 @@ std::string rev_string(std::string& s) {
 	return s
 }	
 
+void count_n_reverse(int n) {
+    std::queue<int> s; 
+    int num_of_digits = 0;  
+    while (n != 0) {          
+        s.push(n % 10);         
+        n /= 10;                
+        num_of_digits++;    
+    }                     
+    std::cout << num_of_digits << "\n";
+    n = 0; // reset n
+    while (!s.empty()) {          
+        n += s.front() * pow(10, num_of_digits--);
+        s.pop();  // Pop the value after using it
+    }                                 
+    std::cout << n << "\n";            
+} 
 
 // FizzBuzz
 void fizzbuzz(int n) {
