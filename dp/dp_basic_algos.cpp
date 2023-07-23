@@ -37,15 +37,23 @@ int lcs(string& X, string& Y) {
 } 
 
 int coinChange(vector<int>& coins, int amount) {
+    // intialize array/vector that is larger than max amount)
+    // infinity placeholder
     vector<int> dp(amount + 1, amount + 1);
+    // 1st element will always be 0
     dp[0] = 0;
+    // nested loop for total amount and through each coin 
     for (int i = 1; i <= amount; i++) {
         for (int j = 0; j < coins.size(); j++) {
+            // check if coin value is less than current total amount
             if (coins[j] <= i) {
+                // dp = the min between dp[current amount] and dp[current amount - current coin value] + 1 to count the coin
                 dp[i] = min(dp[i], dp[i - coins[j]] + 1);
             }
         }
     }
+    // check for error
+    // this returns the total count of min amount of coins with given values to make total amount
     return dp[amount] > amount ? -1 : dp[amount];
 }
 

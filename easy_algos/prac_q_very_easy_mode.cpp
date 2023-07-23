@@ -103,7 +103,24 @@ int binary_search(int a[], int l, int r, int target) {
     return -1;
 }
 
+int binarySearch(vector<int>& arr, int key) {
+    int low = 0;
+    int high = arr.size() - 1;
 
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == key)
+            return mid;
+
+        if (arr[mid] < key)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+
+    return -1;  // return -1 if the key is not found
+}
 // Reverse String
 std::string reverse_str(std::string str) {
     std::reverse(str.begin(), str.end());

@@ -3,10 +3,17 @@
 //
 //
 
-if (root == nullptr) 
-    return nullptr;
+#include <unordered_set>
+#include <vector>
 
-invertTree(root->left);
-invertTree(root->right);
+bool containsDuplicate(std::vector<int>& nums) {
+    std::unordered_set<int> seen;
+    for (int num : nums) {
+        if (seen.find(num) != seen.end()) {
+            return true;
+        }
+        seen.insert(num);
+    }
+    return false;
+}
 
-std::swap(root->left, root->right);
