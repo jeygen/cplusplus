@@ -57,3 +57,38 @@ public:
         return left;
     }
 };
+
+// debug
+
+using namespace std;
+  
+ bool isBadVersion(int n) {
+   return n > 3 ? true : false;
+ }
+  
+ int firstBadVersion(int n) {
+     int left = 1;
+     int right = n;
+     
+     while (left <= right) {
+         int mid = left + (right - left) / 2;
+         cout << "mid: " << mid << endl;
+         
+         if (isBadVersion(mid)) {
+             right = mid - 1;
+             cout << "right: " << right << endl;
+         } else {
+             left = mid + 1;
+             cout << "left: " << left << endl;
+         }
+     }
+     
+     return left;
+ }
+  
+ int main() {
+   firstBadVersion(5);
+   return 0;
+ }
+
+
