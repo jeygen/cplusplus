@@ -10,22 +10,22 @@
 
 using namespace std;
 
+// fix this
+
 int coin(vector<int> coin_list, int max) {
-  // dp array, initialized to a lil bigger than fully needed
-  // nested loop for size and want to cycle through each coin value
-  // take min 
+  // array to work with
+  // 0 is 0
+  // iterate through 1 to max, nested try all coins
+  // check if coin is smaller
+  // take min
   vector<int> dp(max + 1, max + 1);
   dp[0] = 0;
-  for (int i = 1; i <= max; i++) {
-    for (int j = 0; j <= coin_list.size(); j++) {
-      if (coin_list[j] < dp[i]) {
-        dp[i] = min(dp[i], dp[i - coin_list[j]] + 1);
-      }
+
+  for (int i = 1; i < size; i++) {  
+    for (int j = 0; j < coin_list.size(); j++) {
+      if (coin_list[j] < i)
+        dp[i] = min(dp[i], dp[i - coin_list[j]] + 1); 
     }
-  }
-}
-
-
 
 int main() {
   return 0;
