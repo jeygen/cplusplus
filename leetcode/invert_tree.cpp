@@ -1,19 +1,79 @@
-// gpt style
+/*
+Given the root of a binary tree, invert the tree, and return its root.
+
+ 
+
+Example 1:
+
+Input: root = [4,2,7,1,3,6,9]
+Output: [4,7,2,9,6,3,1]
+
+Example 2:
+
+Input: root = [2,1,3]
+Output: [2,3,1]
+
+Example 3:
+
+Input: root = []
+Output: []
+*/
 
 #include <vector>
 
 using namespace std;
 
-void invertBinaryTree(vector<int>& tree) {
-    for (int i = 0; i < tree.size(); i++) {
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+TreeNode* invertTree(TreeNode* root) {
+  if (tree == nullptr) {
+    return nullptr;
+  }
 
-        if (left < tree.size() && right < tree.size()) {
-            swap(tree[left], tree[right]);
-        }
-    }
+  invertBinaryTree(tree->left);
+  invertBinaryTree(tree->right);
+
+  std::swap(tree->left, tree->right);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// gpt style
+
+
+TreeNode* invertTree(TreeNode* root) {
+    if (root == nullptr) {
+        return nullptr;
+    }
+  
+    invertTree(root->left);
+    invertTree(root->right);
+
+    std::swap(root->left, root->right);
+
+    return root;
+}
+
+
+#include <vector>
+
+using namespace std;
+
 
 TreeNode* invertTree(TreeNode* root) {
     if (root == nullptr) {
