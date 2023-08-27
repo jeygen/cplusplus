@@ -25,6 +25,7 @@ int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
     // Let's print the elements of the vector using iterators
+    // can also just use 'auto' instead of writing the full datatype out
     for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it) {
         std::cout << *it << ' ';
     }
