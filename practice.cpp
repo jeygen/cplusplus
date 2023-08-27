@@ -10,28 +10,17 @@
 
 using namespace std;
 
-// fix this
+// practice here 
 
-v_P(string s) {
-  std::stack stk{};
-  for (char& c : string) {
-    switch (c) {
-      case '(':
-        stk.push(')');
-        break;
-      case '{':
-        stk.push(')');
-        break;
-      case '[':
-        stk.push(']');
-        break;
-      case ')':
-      case '}':
-      case ']':
-        stack.pop(c);
+  int majorityElement(vector<int>& nums) {
+    int trigger = nums.size() / 2;
+    unordered_map<int, int> um;
+    for (auto& e : nums) {
+      um[e]++;
+      if (um[e] == trigger)
+          return um[e];
     }
-    } 
-      return stk.empty();
+    return -1;
   }
 
 int main() {
