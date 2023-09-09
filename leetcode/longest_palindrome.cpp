@@ -48,6 +48,33 @@ public:
     }
 };
 
+
+// better version of mine
+
+class Solution {
+public:
+    int longestPalindrome(string s) {
+         std::unordered_map<char, int> um;
+         int total_sum = 0;
+         int odd_flag = 0;
+
+         for (auto& c : s) {
+          um[c]++;
+         }
+
+         for (auto i = um.begin(); i != um.end(); i++) {
+          if (i->second % 2 == 0) {
+            total_sum += i->second;
+          } else {
+            total_sum += (i->second - 1);
+            odd_flag = 1;
+          }
+         }
+
+         return odd_flag ? total_sum + 1 : total_sum;
+    }
+};
+
 // chat_gpt
 class Solution {
 public:
