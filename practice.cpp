@@ -12,16 +12,33 @@ using namespace std;
 
 // practice here 
 
-  int majorityElement(vector<int>& nums) {
-    int trigger = nums.size() / 2;
-    unordered_map<int, int> um;
-    for (auto& e : nums) {
-      um[e]++;
-      if (um[e] == trigger)
-          return um[e];
+class Linky_List {
+  public:
+    Node* head = nullptr;
+
+    Linky_List() {}
+
+    Linky_List(Node* head22) : head(head22) {} 
+
+    void insert(Node* n) {
+      n = head;
+      head = n->next;
     }
-    return -1;
-  }
+    
+    void remove_front() {
+      Node* tmp = head->next;
+      head->next = nullptr;
+      head = temp;    
+    }
+}
+
+class Node {
+  public:
+    int val;
+    Node* next = nullptr;
+
+    Node(int val2, Node* next2) : next(next2) val(val2) {}
+}
 
 int main() {
   return 0;
