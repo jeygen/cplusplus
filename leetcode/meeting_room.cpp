@@ -31,6 +31,24 @@ Output example:
 true
 */
 
+
+bool canAttendAllMeetings(std::vector<std::pair<int, int>>& intervals) {
+  // hints, do this without hashmap and sort will work 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #include <vector>
 #include <algorithm>
 
