@@ -4,7 +4,7 @@
 
 class Animal {
 public:
-    // use virtual keyword to allow overiding - performed at runtime via dynamic binding
+    // doesn't need to virtual, changes type of polymorphism
     virtual void makeSound() {
         std::cout << "The animal makes a sound." << std::endl;
     }
