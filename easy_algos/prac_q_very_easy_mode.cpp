@@ -182,9 +182,17 @@ void bubble_sort(int arr[], int n) {
     }
 }
 
-#include <unordered_map>
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
 // count chars 
+
+#include <unordered_map>
+
 std::unordered_map<char, int> count_chars(const std::string& str) {
     std::unordered_map<char, int> count;
     for (char c : str) {
