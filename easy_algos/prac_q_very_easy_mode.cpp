@@ -184,6 +184,7 @@ void bubble_sort(int arr[], int n) {
 
 #include <unordered_map>
 
+// count chars 
 std::unordered_map<char, int> count_chars(const std::string& str) {
     std::unordered_map<char, int> count;
     for (char c : str) {
