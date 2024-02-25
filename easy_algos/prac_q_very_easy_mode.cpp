@@ -85,7 +85,7 @@ int factorial(int n) {
 // return the index of target
 int binary_search(int a[], int l, int r, int target) {
     if (r >= l) {
-        int mid = l + (r - l) / 2;
+        int mid = l + (r - l) / 2; // floor + current mid of indices
 
         // If the element is present at the middle itself
         if (a[mid] == target)
@@ -184,7 +184,7 @@ void bubble_sort(int arr[], int n) {
 
 def bubble_sort(arr):
     n = len(arr)
-    for i in range(n):
+    for i in range(n-1):
         for j in range(0, n-i-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
@@ -256,6 +256,11 @@ int string_length(const char* str) {
     while(*s) ++s;
     return s - str;
 }
+
+// duplicates
+my_list = [1, 2, 2, 3, 4, 4, 4, 5]
+my_set = set(my_list)
+print(my_set)
 
 
 // Vector is represented using std::array of 3 elements
